@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Array in Local Storage</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the button to store data</h1>
+        <button id="setDataBtn">Set Data</button>
+    </div>
+
+    <script>
+      const numbersArray = {
+    "pizzaGraph": {
+        "January": {
+            "expenses": []
+        },
+        "February": {
+            "expenses": [
+                {
+                    "category": "Food",
+                    "amount": -6.472906403940888,
+                    "expectedAmount": -6.472906403940888,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -26.28,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -26.28,
+                    "currency_name": "plnBank"
+                },
+                {
+                    "category": "Rent",
+                    "amount": -0.024630541871921187,
+                    "expectedAmount": -0.024630541871921187,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -0.1,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -0.1,
+                    "currency_name": "plnBank"
+                },
+                {
+                    "category": "Utilities",
+                    "amount": -0.024630541871921187,
+                    "expectedAmount": -0.024630541871921187,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -0.1,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -0.1,
+                    "currency_name": "plnBank"
+                },
+                {
+                    "category": "Grooming",
+                    "amount": -0.024630541871921187,
+                    "expectedAmount": -0.024630541871921187,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -0.1,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -0.1,
+                    "currency_name": "plnBank"
+                },
+                {
+                    "category": "Internet",
+                    "amount": -0.024630541871921187,
+                    "expectedAmount": -0.024630541871921187,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -0.1,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -0.1,
+                    "currency_name": "plnBank"
+                },
+                {
+                    "category": "Alcohol",
+                    "amount": -0.024630541871921187,
+                    "expectedAmount": -0.024630541871921187,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -0.1,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -0.1,
+                    "currency_name": "plnBank"
+                },
+                {
+                    "category": "Cigarets",
+                    "amount": -4.679802955665025,
+                    "expectedAmount": -4.679802955665025,
+                    "unexpectedAmount": 0,
+                    "expectedUsd": 0,
+                    "expectedEur": 0,
+                    "expectedMdl": 0,
+                    "expectedPln": -19,
+                    "unexpectedUsd": 0,
+                    "unexpectedEur": 0,
+                    "unexpectedMdl": 0,
+                    "unexpectedPln": 0,
+                    "currency": -19,
+                    "currency_name": "plnBank"
+                }
+            ]
+        },
+        "March": {
+            "expenses": []
+        },
+        "April": {
+            "expenses": []
+        },
+        "May": {
+            "expenses": []
+        },
+        "June": {
+            "expenses": []
+        },
+        "July": {
+            "expenses": []
+        },
+        "August": {
+            "expenses": []
+        },
+        "September": {
+            "expenses": []
+        },
+        "October": {
+            "expenses": []
+        },
+        "November": {
+            "expenses": []
+        },
+        "December": {
+            "expenses": []
+        }
+    },
+    "linearGraph": {
+        "labels": [
+            "9/2 Sunday"
+        ],
+        "incomeData": [
+            "1395.45"
+        ],
+        "outcomeData": [
+            "1395.45"
+        ],
+        "cumulativeIncome": 1395.454137931035,
+        "cumulativeOutcome": 1395.454137931035
+    },
+    "currencyData": {
+        "balancePLN": "5598.91",
+        "balanceMDL": "75.56",
+        "balanceEUR": "4.86",
+        "balanceUSD": "7.36",
+        "ratePLN": "4.06",
+        "rateMDL": "18.68",
+        "rateEUR": "0.97",
+        "bank": "plnBank"
+    },
+    "workData": {
+        "hourlyRate": 20,
+        "workDays": [
+            {
+                "date": "2025-02-09T10:59:17.866Z",
+                "hoursWorked": 0,
+                "remaining2": -11.275862068965518,
+                "earnedAmount": 0,
+                "expenses": 45.780000000000015,
+                "remainingBalance": -45.780000000000015,
+                "income": 0,
+                "salary": "",
+                "salaryDigit": 0,
+                "month_number": 2,
+                "day_number": 9,
+                "hourlyRate": 20,
+                "currency": "PLN",
+                "the_year": 2025
+            }
+        ],
+        "totalEarned": 0,
+        "remainingBalance": -19.8
+    },
+    "learnStore": {
+        "labels3": [
+            "2025-02-07"
+        ],
+        "redData3": [
+            0
+        ],
+        "greenData3": [
+            0
+        ]
+    }
+}
+
+
+
+
+        document.getElementById("setDataBtn").addEventListener("click", function() {
+            localStorage.setItem("POWER", JSON.stringify(numbersArray));
+            alert("Array has been stored in local storage!");
+        });
+    </script>
+</body>
+</html>
